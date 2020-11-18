@@ -1,21 +1,14 @@
 <?php
 
-    require_once 'includes/db_connection.php';
+    require_once '../includes/db_connection.php';
     $conn = OpenCon();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-</head>
-<body>
-     <!-- link to each vendor -->
-     <h1>productVendor</h1>
+    <!-- link to each vendor -->
+    <h1>productVendor</h1>
     <a href="/godzilla-store/Vendortype/Autoart.php">Autoart Studio Design</a> <br/>
     <a href="/godzilla-store/Vendortype/Carousel.php">Carousel DieCast Legends</a><br/>
     <a href="/godzilla-store/Vendortype/Classic.php">Classic Metal Creations</a><br/>
@@ -28,12 +21,20 @@
     <a href="/godzilla-store/Vendortype/Second.php">Second Gear Diecast</a><br/>
     <a href="/godzilla-store/Vendortype/Studio.php">Studio M Art Models</a><br/>
     <a href="/godzilla-store/Vendortype/Welly.php">Welly Diecast Productions</a><br/>
+
+    <a href="../index.php">Home</a>
     <!-------------------------->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
     <!-- ตาราง -->
     <h1>Product</h1>
 <?php
 //2. query ข้อมูลจากตาราง tb_member: 
-$query = "SELECT * FROM products order by productVendor,productScale" or die("Error:" . mysqli_connect_error()); 
+$query = "SELECT * FROM products where productVendor ='Gearbox Collectibles' " or die("Error:" . mysqli_connect_error()); 
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
 $result = mysqli_query($conn, $query); 
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล: 
@@ -55,7 +56,6 @@ echo "</table>";
 ?>
      <!-- ---------------------->
 
-    
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>

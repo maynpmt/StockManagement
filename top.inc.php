@@ -33,28 +33,38 @@
 
 <body>
 
-<div id="right-panel" class="right-panel">
-         <header id="header" class="header">
-            <div class="top-left">
-               <div class="navbar-header">
-                  <a class="navbar-brand" href="index.php"><h1>Godzilla Store</h1></a>
-                  <a class="navbar-brand hidden" href="index.php"></a>
-                  <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-               </div>
+
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">GODzillA </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+
+        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome 
+                        <?php  if (isset($_SESSION['username'])) : echo $_SESSION['username']; ?></a><?php endif ?>
+
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="index.php?logout='1'"> Logout </a>
             </div>
-            <div class="top-right">
-               <div class="header-menu">
-                  <div class="user-area dropdown float-right">
-                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?php  if (isset($_SESSION['username'])) : echo $_SESSION['username']; ?></a><?php endif ?>
-                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="index.php?logout='1'"><i class="fa fa-power-off"></i>Logout</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-
-
+        </li>
+        </ul>
+    </div>
+    </nav>
 
 
 
