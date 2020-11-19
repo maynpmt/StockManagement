@@ -50,6 +50,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="stock-in.php">Stock</a>
+
         </li>
         <li class="nav-item">
             <a class="nav-link" href="order.php">Order</a>

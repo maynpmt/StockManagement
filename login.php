@@ -1,8 +1,8 @@
 <?php 
-
+     session_start();
     require_once 'includes/db_connection.php';
     $conn = OpenCon();
- session_start();
+
 
 ?>
 

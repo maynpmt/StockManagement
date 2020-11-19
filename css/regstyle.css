@@ -76,4 +76,13 @@ form{
 }
 .gg{
     text-align: center;
+    margin-left: 20%;
+}
+
+.row {
+    margin-left: 20%;
+}
+
+.container-fluid {
+    margin-left: 20%;
 }
