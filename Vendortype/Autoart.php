@@ -1,5 +1,5 @@
 <?php
-
+    require_once '../top.inc.php';
     require_once '../includes/db_connection.php';
     $conn = OpenCon();
 
@@ -9,7 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Catalog | Autoart</title>
+    
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -31,29 +32,35 @@
     <a href="../index.php">Home</a>
     <!-------------------------->
     <!-- ตาราง -->
-    <h1>Product</h1>
-<?php
-//2. query ข้อมูลจากตาราง tb_member: 
-$query = "SELECT * FROM products where productVendor ='Autoart Studio Design' " or die("Error:" . mysqli_connect_error()); 
-//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
-$result = mysqli_query($conn, $query); 
-//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล: 
- 
-echo "<table border='1' align='center' width='500'>";
-//หัวข้อตาราง
-echo "<tr align='center' bgcolor='#CCCCCC'><td>vendor</td><td>Scale</td><td>Code</td><td>Name</td><td>Price</td></tr>";
-while($row = mysqli_fetch_array($result)) { 
-  echo "<tr>";
-  echo "<td>" .$row["productVendor"] .  "</td> "; 
-  echo "<td>" .$row["productScale"] .  "</td> ";  
-  echo "<td>" .$row["productCode"] .  "</td> ";
-  echo "<td>" .$row["productName"] .  "</td> ";
-  echo "<td>" .$row["buyPrice"] .  "</td> ";
 
-}
-echo "</table>";
-//5. close connection.
+
+<h1>Product</h1>
+<?php 
+    $query = "SELECT * FROM products where productVendor ='Autoart Studio Design' " or die("Error:" . mysqli_connect_error());
+    $result = mysqli_query($conn, $query); 
 ?>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Vendor</th>
+            <th>Scale</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+    <?php while($row = mysqli_fetch_array($result)) :  ?>
+        <tr>
+            <td><?php echo $row["productVendor"] ?></td>
+            <td><?php echo $row["productScale"] ?></td>
+            <td><?php echo $row["productCode"] ?></td>
+            <td><?php echo $row["productName"] ?></td>
+            <td><?php echo $row["buyPrice"] ?></td>
+            
+        </tr>
+    <?php endwhile ?>
+</table>
      <!-- ---------------------->
 
      

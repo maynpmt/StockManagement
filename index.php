@@ -1,8 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/ystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body background-image: url("css/picreg.jpg")>
 <?php
     require('top.inc.php');
 ?>
 
     <h1>Index</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <div class="content">
 
@@ -24,3 +35,5 @@
 <?php
     require('footer.inc.php');
 ?>
+</body>
+</html>

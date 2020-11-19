@@ -13,6 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <!-- test css -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/mystyle.css">
+
 
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -22,11 +28,15 @@
     
 </head>
 <body>
-    <h1>Login</h1>
+   
+    
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form action="login-db.php" method="post">
 
-    <form action="login-db.php" method="post">
-     
-        <!-- notification message -->
+            <!-- notification message -->
         <?php if(isset($_SESSION['error'])) : ?>
             <div class="error">
                 <h5>
@@ -38,23 +48,32 @@
             </div>
         <?php endif ?>
 
-        <div class="input-group">
-            <label for="username" >Username</label>
-            <input type="text" name="username" id="">
-        </div>
+                <h3>Login</h3>
+               <div class="row">
+                    <div class="col-md-12">
+                        
+                    
 
-        <div class="input-group">
-            <label for="password" >Password</label>
-            <input type="password" name="password" id="">
-        </div>
+                        <div class="form-group">
+                            <label for="username" >Username</label>
+                            <input type="password" name="username" id="" class="form-control" placeholder="username" value="" >
+                        </div>
 
-        <div class="input-group">
-            <button type="submit" name="login_user" class="btn" id="">Login</button>
-        </div>
+                        <div class="form-group">
+                            <label for="password" >Password</label>
+                            <input type="password" name="password" id="" class="form-control" placeholder="password" value="" >
+                        </div>
 
-        <p>Not yet a member ? <a href="register.php">Sign Up</p>
 
-    </form>
+                        <div class="form-group">
+                            <button type="submit" name="login_user" class="btnContact" id="">Login</button>
+                        </div>
+
+                        <p><a href="register.php">Register</p>
+                    
+            </form>
+</div>
+    
 
     
 </body>

@@ -5,77 +5,85 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    
+    <link rel="stylesheet" href="css/regstyle.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+	<title>register</title>
 </head>
 <body>
-    <h1>Register</h1>
+    <!-- notification message -->
+    <?php if(isset($_SESSION['error'])) : ?>
+                <div class="error">
+                    <h5>
+                        <?php 
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']); //refresh -> unset
+                        ?> 
+                    </h5>
+                </div>
+            <?php endif ?>
 
-        <!-- notification message -->
-        <?php if(isset($_SESSION['error'])) : ?>
-            <div class="error">
-                <h5>
-                    <?php 
-                        echo $_SESSION['error'];
-                        unset($_SESSION['error']); //refresh -> unset
-                    ?> 
-                </h5>
-            </div>
-        <?php endif ?>
+	<!-- Main Content -->
+	<div class="container-fluid">
+		<div class="row ">
+			<div class="col-md-4 text-center company__info">
+            <span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+				<h4 class="company_title"></h4>
+			</div>
+			<div class="gg">
+				<div class="container-fluid">
+					<div class="row">
+						<h2>Register</h2>
+					</div>
+					<div class="row">
+                        <!--form-->
+						<form control="" class="form-group" action="register-db.php" method="post">
+                        <?php include('errors.php'); ?>
+							<div class="row">
+								<input type="text" name="username" id="username" class="form__input" placeholder="Username">
+                            </div>
+                            
+							<div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="text" name="firstname" id="username" class="form__input" placeholder="Firstname">
+                            </div>
 
-    <form action="register-db.php" method="post">
-        <?php include('errors.php'); ?>
-        <div class="input-group">
-            <label for="username" >Username</label>
-            <input type="text" name="username" id="">
-        </div>
-        <div class="input-group">
-            <label for="firstname" >Firstname</label>
-            <input type="text" name="firstname" id="">
-        </div>
-        <div class="input-group">
-            <label for="lastname" >Lastname</label>
-            <input type="text" name="lastname" id="">
-        </div>
-        <div class="input-group">
-            <label for="email" >Email</label>
-            <input type="email" name="email" id="">
-        </div>
-        <div class="input-group">
-            <label for="password" >Password</label>
-            <input type="password" name="password" id="">
-        </div>
+                            <div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="text" name="lastname" id="username" class="form__input" placeholder="Lastname">
+                            </div>
 
-        <div class="form-group input-group">
-            <label for="jobtitle">Job Title:</label>
-            <select class="form-control" name="jobtitle" id="jobtitle">
-                <option>President</option>
-                <option>Sales Manager (EMEA)</option>
-                <option>Sales MAnager (APAC)</option>
-                <option>Sales Manager (NA)</option>
-                <option>Sales Rep</option>
-                <option>VP Marketing</option>
-                <option>VP Sales</option>
-            </select>
-        </div>
+                            <div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="email" name="email" id="" class="form__input" placeholder="Email">
+                            </div>
 
-        <div class="input-group">
-        <input type="submit" name="submit" value="Register">
-        </div>
+                            <div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="password" name="password" id="password" class="form__input" placeholder="Password">
+                            </div>
+                            
+                            
 
-        <p>Already a member ? <a href="login.php">Sign in</p>
+							<div class="row">
+								<input type="submit" name="submit" value="Register" class="btn">
+                            </div>
+                            
+                            
 
-    </form>
-    
+						</form>
+                        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- Footer -->
+    <br><br>
+	<div class="gg">
+		Coded with &hearts; by <a href=" ">GODzillA</a></p>
+	</div>
 </body>
-</html>

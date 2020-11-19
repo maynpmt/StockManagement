@@ -31,7 +31,7 @@
 <!-- query order -->
 
 <?php 
-     $sql = "SELECT * FROM godzilla_store.orders ORDER BY orderNumber DESC";
+     $sql = "SELECT * FROM godzilla_store.orders ORDER BY orderNumber DESC" or die("Error:" . mysqli_connect_error());
      $result = mysqli_query($conn, $sql); 
 ?>
 

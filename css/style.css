@@ -7,3 +7,8 @@
 #bt {
     margin-bottom: 1%;
 }
+
+.navdropdown{
+    position: relative;
+    left: 60px;
+}
